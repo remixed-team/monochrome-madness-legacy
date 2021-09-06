@@ -22,13 +22,10 @@ class MenuCharacter extends FlxSprite
 
 		switch(character) {
 			case 'bf':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_BF');
-				animation.addByPrefix('idle', "M BF Idle", 24);
-				animation.addByPrefix('confirm', 'M bf HEY', 24, false);
+				trace('too lazy for this rn, ill do it later');
 
 			case 'gf':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_GF');
-				animation.addByPrefix('idle', "M GF Idle", 24);
+				trace('too lazy for this rn, ill do it later');
 
 			case 'dad':
 				frames = Paths.getSparrowAtlas('menucharacters/Menu_Dad');
@@ -53,6 +50,8 @@ class MenuCharacter extends FlxSprite
 			case 'senpai':
 				frames = Paths.getSparrowAtlas('menucharacters/Menu_Senpai');
 				animation.addByPrefix('idle', "M Senpai Idle", 24);
+			case 'monochrome':
+				trace('too lazy for this rn, ill do it later');
 		}
 		animation.play('idle');
 		updateHitbox();

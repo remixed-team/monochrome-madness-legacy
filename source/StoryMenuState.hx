@@ -206,7 +206,7 @@ class StoryMenuState extends MusicBeatState
 		txtTracklist = new FlxText(FlxG.width * 0.05, tracksSprite.y + 60, 0, "", 32);
 		txtTracklist.alignment = CENTER;
 		txtTracklist.font = rankText.font;
-		txtTracklist.color = 0xFFe55777;
+		txtTracklist.color = 0xFFFFFFFF;
 		add(txtTracklist);
 		// add(rankText);
 		add(scoreText);
@@ -396,7 +396,7 @@ class StoryMenuState extends MusicBeatState
 		var assetName:String = weekBackground[0];
 		if(curWeek < weekBackground.length) assetName = weekBackground[curWeek];
 
-		bgSprite.loadGraphic(Paths.image('menubackgrounds/menu_' + assetName));
+		bgSprite.loadGraphic(Paths.image('menubackgrounds/menu_' + 'mono'));
 		updateText();
 	}
 

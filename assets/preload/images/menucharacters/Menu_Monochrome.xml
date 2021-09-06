@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Menu_Monochrome.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="idle instance 10000" x="5" y="5" width="600" height="600"/>
+	<SubTexture name="idle instance 10001" x="5" y="5" width="600" height="600"/>
+	<SubTexture name="idle instance 10002" x="610" y="5" width="600" height="600"/>
+	<SubTexture name="idle instance 10003" x="610" y="5" width="600" height="600"/>
+	<SubTexture name="idle instance 10004" x="1215" y="5" width="600" height="600"/>
+	<SubTexture name="idle instance 10005" x="1215" y="5" width="600" height="600"/>
+	<SubTexture name="idle instance 10006" x="5" y="610" width="600" height="600"/>
+	<SubTexture name="idle instance 10007" x="5" y="610" width="600" height="600"/>
+	<SubTexture name="idle instance 10008" x="610" y="610" width="600" height="600"/>
+	<SubTexture name="idle instance 10009" x="610" y="610" width="600" height="600"/>
+	<SubTexture name="idle instance 10010" x="1215" y="610" width="600" height="600"/>
+	<SubTexture name="idle instance 10011" x="1215" y="610" width="600" height="600"/>
+	<SubTexture name="idle instance 10012" x="1215" y="610" width="600" height="600"/>
+	<SubTexture name="idle instance 10013" x="1215" y="610" width="600" height="600"/>
+</TextureAtlas>

@@ -1,1 +1,1 @@
-Tutorial:gf:0xFF9271FD
+Achromatic:monochrome:0xFFFFFFFF

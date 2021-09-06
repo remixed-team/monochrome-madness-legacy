@@ -98,6 +98,7 @@ class PlayState extends MusicBeatState
 	public var vocals:FlxSound;
 
 	public var dad:Character;
+	public var monoNerv:Character;
 	public var gf:Character;
 	public var boyfriend:Boyfriend;
 
@@ -183,6 +184,8 @@ class PlayState extends MusicBeatState
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
 	var bgGhouls:BGSprite;
+
+	var nervous:Bool = false;
 
 	public var songScore:Int = 0;
 	public var songHits:Int = 0;
@@ -553,6 +556,13 @@ class PlayState extends MusicBeatState
 					bg.antialiasing = false;
 					add(bg);
 				}
+			case 'achromatic':
+				defaultCamZoom = 0.9;
+				curStage = 'city';
+
+				var bg:BGSprite = new BGSprite('city', -630, -355, 0.9, 0.9);
+				bg.antialiasing = true;
+				add(bg);
 
 			default:
 				defaultCamZoom = 0.9;
@@ -609,6 +619,8 @@ class PlayState extends MusicBeatState
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
+			case 'city':
+				//nothing because i got lazy and its 11:16 holy jesus
 			case 'limo':
 				BF_Y -= 220;
 				BF_X += 260;
@@ -641,6 +653,10 @@ class PlayState extends MusicBeatState
 		dad.x += dad.positionArray[0];
 		dad.y += dad.positionArray[1];
 		dadGroup.add(dad);
+
+		monoNerv = new Character (DAD_X, DAD_Y, 'pico'); // haha
+		monoNerv.x += dad.positionArray[0];
+		monoNerv.y += dad.positionArray[1];
 
 		boyfriend = new Boyfriend(BF_X, BF_Y, SONG.player1);
 		boyfriend.x += boyfriend.positionArray[0];
@@ -2561,6 +2577,59 @@ class PlayState extends MusicBeatState
 							}
 							dad.visible = true;
 							iconP2.changeIcon(dad.healthIcon);
+						}
+
+					case 2:
+						if(gf.curCharacter != value2) {
+							if(!gfMap.exists(value2)) {
+								addCharacterToList(value2, charType);
+							}
+
+							var isGfVisible:Bool = gf.visible;
+							gf.visible = false;
+							gf = gfMap.get(value2);
+							gf.visible = isGfVisible;
+						}
+
+				}
+			case 'monoChange':
+				var charType:Int = Std.parseInt(value1);
+				if(Math.isNaN(charType)) charType = 0;
+
+				switch(charType) {
+					case 0:
+						if(boyfriend.curCharacter != value2) {
+							if(!boyfriendMap.exists(value2)) {
+								addCharacterToList(value2, charType);
+							}
+
+							boyfriend.visible = false;
+							boyfriend = boyfriendMap.get(value2);
+							boyfriend.visible = true;
+							iconP1.changeIcon(boyfriend.healthIcon);
+						}
+
+					case 1:
+						if(Math.floor(ratingPercent * 100) > 75 && dad.curCharacter == 'monochrome') //such jankkk
+						{
+							if(dad.curCharacter != value2) {
+								if(!dadMap.exists(value2)) {
+									addCharacterToList(value2, charType);
+								}
+	
+								var wasGf:Bool = dad.curCharacter.startsWith('gf');
+								dad.visible = false;
+								dad = dadMap.get(value2);
+								if(!dad.curCharacter.startsWith('gf')) {
+									if(wasGf) {
+										gf.visible = true;
+									}
+								} else {
+									gf.visible = false;
+								}
+								dad.visible = true;
+								iconP2.changeIcon(dad.healthIcon);
+							}
 						}
 
 					case 2:
